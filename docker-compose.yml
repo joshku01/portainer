@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    restart: always
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      # 掛載設定檔
+      - portainer-data:/data
+      - # 指定使用那一條網路
+    networks:
+      - portainer_service
+networks:
+  portainer_service:
+    external: true
