@@ -1,0 +1,6 @@
+kind: pipeline
+name: protainer
+
+steps: 
+  commands: 
+    -mkdir -p /user/local/go/src
