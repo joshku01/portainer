@@ -1,8 +1,5 @@
 kind: pipeline
 name: default
-workspace:
-  base: /go
-  path: src/github.com/joshgu01/portainer
 steps:
   - name: build
     image: golang
