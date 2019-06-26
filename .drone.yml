@@ -12,3 +12,4 @@ pipeline:
     source: ./
     target: ~/www/${DRONE_REPO_NAME}
     delete: true
+
