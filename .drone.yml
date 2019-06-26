@@ -1,16 +1,12 @@
 kind: pipeline
 name: default
+
+clone:
+  depth: 50
+
 steps:
   - name: build
     image: golang
     commands:
-      - go get
-      - go build -o output
-      - chmod +x output
-  - name: run
-    image: golang
-    commands:
-      - go get
-      - go build -o output
-      - chmod +x output
-      - ./output
+      - go build
+      - go test
