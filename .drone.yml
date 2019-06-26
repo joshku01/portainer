@@ -4,11 +4,6 @@ workspace:
   base: /go
   path: src/github.com/joshgu01/portainer
 steps:
-  - name: test
-    image: golang
-    commands:
-      - go get
-      - go test
   - name: build
     image: golang
     commands:
