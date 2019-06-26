@@ -3,3 +3,12 @@ pipeline:
     image: golang
     commands:
       - go build
+  rsync-step1:
+    image: drillster/drone-rsync
+    hosts:
+      - 35.189.191.155
+    secrets: [ rsync_user, rsync_key ]
+    recursive: true
+    source: ./
+    target: ~/www/${DRONE_REPO_NAME}
+    delete: true
