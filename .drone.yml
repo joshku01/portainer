@@ -8,7 +8,7 @@ pipeline:
     hosts:
       - 35.189.191.155
     secrets: [ rsync_key ]
-    user: "joshgu1009"
+    user: rsync_user
     key: $rsync_key
     recursive: true
     source: ./
