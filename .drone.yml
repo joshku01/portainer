@@ -1,11 +1,45 @@
 
 pipeline:
+  build:
+    image: golang
+    commands:
+      - go build
+      - echo rsync_user
+      - echo rsync_key
   rsync-step1:
     image: drillster/drone-rsync
     hosts:
       - 35.189.191.155
-    user: joshgu
-    secrets: [ rsync_key ]
+    secrets: [ joshgu1009, "-----BEGIN RSA PRIVATE KEY-----
+                            Proc-Type: 4,ENCRYPTED
+                            DEK-Info: AES-128-CBC,157B9F1D9B53B6AF24D3DB6CB310F784
+
+                            EwZUp8/EfEexSzX1xTmPz9K42O0BgYwRKNSIXlBktUQ0/HyCV+C+oejgQthh2vvJ
+                            ZptUQN33mbTozjHhvSvoLSmA8cuMSkPShCBNTjFCQTX09I4oCmRDOAG4gLst+l0k
+                            AqU9EcPSPJMCJnNQxKM4ZY1UDs1pbz6jgw4zzNM2UO9isC7SDxnwcmuivT6V/nN6
+                            fxEiwPrzq/4MJbsVkKSWEh8Xj47DheL3GIBPfqYcRM5dNagnWvhc1AflDcGW/eY6
+                            X1yzOvnJKmuO3Gum2YBUVvENp1MZPE9SPiRvr6pYd9gN8GmR35+I5W7CN8zjD93n
+                            fuPgRtUDqGtw+YETz6+VAFe5qe2j9vHMRD5O0F/+tGQDvaRslqDXN/ldk2sTYYJy
+                            nYPypu+qm+fu4lNZEtaEM/Th2Cr2KIA1Dk7QGbTquNmtZQVKUHjRoOBlQPxCkjUm
+                            4BIcFFf94ws5lmrmfycJcGOzbJtY4zLv0ikS5mklH8Vx5NJJ/1i7xOcmWM2lQUxe
+                            dWVPieoJRDrRbJIIXJTSdZAWA+w4yniVKWrXFAaLWsHtMEEAG3roABXnSlkMJZkk
+                            1D7Cg4LrTHElfSrHC2qfL/7lpwo+H2kssKtOC1s4b8AygVQn7o4EdTuvv0HHpg3L
+                            2Eiq/ybAoPQF125h7d8EM0+k1V/I7XFovmwk9wUEMGsw+Vz82r2aA+0ypWpE+NcO
+                            k+lTjWCAh8T3iKbf7qBqr8kRI3fHmoV0H42hrxjwDpWK+V4fodFlHbb0pCF2FY37
+                            TVPkrowr5mIuH/PwBo0ZBknQ40i/0mNNEvNzrvFqkCcjCszdJLE5tAYK33Ewd5ef
+                            swGGwJ+4QqVu95h1R89qmlFr31vTpI8+sjexQAiKHGIlqvZKFiEBKiQ+JInv3N5h
+                            txAgesDPLMj0dOFAnWzLfxvLg1xAoxwyMinrux7s6Zal4ctj3hHvoL6dOHsyYfgq
+                            GV/WPKO4etoq+VUavbnjPQiCdPIXmINuvc3vKF0JfzMBKvB4AOt2QhqvfeORHax2
+                            4T1hgymCDN5e8CSVxopZziGY7wI0j9nXg/ECHWXU/ZVdn+XexJD4/PAIiqOk9/KC
+                            ZjEZvR7D9i00OgS77JRsndGQ1E6UUMlu6LVeHndY4sKrlpfbn9ocLrD+I/g93myQ
+                            4/3xY47wVsABLIk0bWVbj7etMuN+Y3KAFmaEO3xZoB4R371C0eA4ktWYHP97fGBX
+                            pZMmd3fgnSIQlDKug+s9SnjM3HuK0I1XZ901CgyCF00VVCa+AiRpyb5Hsn2e0RG1
+                            XSDARcHrneKnZaWauE+4+jwI5U3W359DGhXD1aI97IQ+QlfgOk9IgYu/FaJWP59P
+                            JQeKpp0SGppw/16/ewusZD23RVsxewkPNtLGMjG/GfzYeVfftP/GDBZypyt3CCGj
+                            w3Myix2oC9RbqhEQKPySg1OOikN6n3F/kQsQCqBxXbl41gk/Kxs74QfaEOV4UdNq
+                            ahsUA3AvzPcjlsgs0V6BN61CtUpZEzcRWSwLSKYV37MMZCdU2DWaPmXKTSEep/9l
+                            xw2R0rhd8zJpmHG7VkSecJbB+mFV1AHNnbDBu2fFOOvqphsRaiaHZR+Q2DkAk9EH
+                            -----END RSA PRIVATE KEY-----" ]
     recursive: true
     source: ./
     target: ~/www/
