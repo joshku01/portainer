@@ -12,6 +12,6 @@ pipeline:
     secrets: [ rsync_user, rsync_key ]
     recursive: true
     source: ./
-    target: ~/www/${DRONE_REPO_NAME}
+    target: ~/www/
     delete: true
 
