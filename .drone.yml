@@ -9,7 +9,7 @@ pipeline:
     image: drillster/drone-rsync
     hosts:
       - 35.189.191.155
-    secrets: [ rsync_user, RSYNC_KEY ]
+    secrets: [ user, key ]
     recursive: true
     source: ./
     target: ~/www/${DRONE_REPO_NAME}
