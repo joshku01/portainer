@@ -1,10 +1,5 @@
+
 pipeline:
-  build:
-    image: golang
-    commands:
-      - go build
-      - echo rsync_user
-      - echo rsync_key
   rsync-step1:
     image: drillster/drone-rsync
     hosts:
